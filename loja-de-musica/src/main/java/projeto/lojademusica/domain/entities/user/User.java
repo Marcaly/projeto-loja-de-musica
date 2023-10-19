@@ -1,4 +1,4 @@
-package projeto.lojademusica.domain.entities;
+package projeto.lojademusica.domain.entities.user;
 
 import jakarta.persistence.*;
 import lombok.*;
