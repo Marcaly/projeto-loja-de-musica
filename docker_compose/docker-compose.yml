@@ -4,12 +4,12 @@ services:
 
   db:
     image: mysql
-    container_name: mysql
+    container_name: loja
     environment:
       MYSQL_ROOT_PASSWORD: "root"
     ports:
       - "3306:3306"
     volumes:
-      - springdata:/var/lib/mysql
+      - springdata:/var/lib/loja
 volumes:
   springdata:

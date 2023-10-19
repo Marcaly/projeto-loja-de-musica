@@ -3,7 +3,6 @@ package projeto.lojademusica.domain.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import projeto.lojademusica.domain.entities.Product;
-import projeto.lojademusica.domain.entities.User;
 import projeto.lojademusica.domain.repositories.ProductRepository;
 import projeto.lojademusica.domain.services.exceptions.ProductNotFoundException;
 
