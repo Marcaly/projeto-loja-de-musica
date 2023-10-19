@@ -6,16 +6,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import projeto.lojademusica.domain.entities.user.AuthenticationDTO;
 import projeto.lojademusica.domain.entities.user.LoginResponseDTO;
 import projeto.lojademusica.domain.entities.user.RegisterDTO;
 import projeto.lojademusica.domain.entities.user.User;
 import projeto.lojademusica.domain.repositories.UserRepository;
 import projeto.lojademusica.infra.security.TokenService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("auth")
@@ -38,6 +37,7 @@ public class AuthenticationController {
 
     @PostMapping("/register")
     public ResponseEntity register(@RequestBody @Valid RegisterDTO data) {
+
         if (this.userRepository.findByLogin(data.login()) != null) return ResponseEntity.badRequest().build();
 
         String encryptedPassword = new BCryptPasswordEncoder().encode(data.password());

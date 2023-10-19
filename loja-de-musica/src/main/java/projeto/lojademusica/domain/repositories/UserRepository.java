@@ -7,5 +7,4 @@ import projeto.lojademusica.domain.entities.user.User;
 public interface UserRepository extends JpaRepository<User, String> {
 
     UserDetails findByLogin(String login);
-
 }
