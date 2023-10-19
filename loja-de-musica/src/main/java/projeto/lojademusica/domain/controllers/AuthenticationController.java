@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import projeto.lojademusica.domain.entities.user.AuthenticationDTO;
+import projeto.lojademusica.domain.entities.user.LoginResponseDTO;
 import projeto.lojademusica.domain.entities.user.RegisterDTO;
 import projeto.lojademusica.domain.entities.user.User;
 import projeto.lojademusica.domain.repositories.UserRepository;
+import projeto.lojademusica.infra.security.TokenService;
 
 @RestController
 @RequestMapping("auth")
@@ -22,12 +24,16 @@ public class AuthenticationController {
     private AuthenticationManager authenticationManager;
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private TokenService tokenService;
 
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody @Valid AuthenticationDTO data) {
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
-        return ResponseEntity.ok().build();
+
+        var token = tokenService.generateToken((User) auth.getPrincipal());
+        return ResponseEntity.ok(new LoginResponseDTO(token));
     }
 
     @PostMapping("/register")
