@@ -11,14 +11,14 @@ Permissão do tipo USER: somente poderá ver os instrumentos musicais da loja.
 
 Em seguida, o usuário terá que informar o login e senha no endpoint /auth/login, que retornará um Bearer Token que será utilizado para garantir a confidencialidade do projeto. 
 
-![Foto1](https://github.com/Marcaly/projeto-loja-de-musica/blob/main/Captura%20de%20tela%202023-11-11%20170510.png)
+![Foto1](https://github.com/Marcaly/projeto-loja-de-musica/blob/main/fotosProjeto/Captura%20de%20tela%202023-11-11%20170510.png)
 
 
 Se o usuário com a permissão "USER" tentar fazer alguma requisição que não esteja no escopo de suas permissões, retornará um 403 forbidden, o que significa que o mesmo não tem as devidas permissões. 
 
-![Foto2](https://github.com/Marcaly/projeto-loja-de-musica/blob/main/Captura%20de%20tela%202023-11-11%20170753.png)
+![Foto2](https://github.com/Marcaly/projeto-loja-de-musica/blob/main/fotosProjeto/Captura%20de%20tela%202023-11-11%20170753.png)
 
 Somente o usuário com a permissão "ADMIN" poderá fazer as requisições PUT, POST e DELETE com sucesso, no caso da foto foi feito um POST com o Token do admin, o que resultou em um 201 Created. 
 
-![Foto3](https://github.com/Marcaly/projeto-loja-de-musica/blob/main/Captura%20de%20tela%202023-11-11%20171101.png)
+![Foto3](https://github.com/Marcaly/projeto-loja-de-musica/blob/main/fotosProjeto/Captura%20de%20tela%202023-11-11%20171101.png)
 
