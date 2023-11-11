@@ -1,6 +1,6 @@
 ﻿# Sobre o projeto
 
-## Essa api foi desenvolvida utilizando a linguagem de programação Java, na versão 21, empregando o spring boot como framework na versão 3.1.4. Além disso, foi utilizada uma imagem do docker do MySQL como banco para desenvolvimento local e o Postman para realizar os testes dos endpoints. Também utilizei JWT para autenticação, JPA para persistencia de dados e Junit e mockito para testes unitários.
+## Essa api foi desenvolvida utilizando a linguagem de programação Java, na versão 21, empregando o spring boot como framework na versão 3.1.4. Além disso, foi utilizada uma imagem do docker do MySQL como banco para desenvolvimento local e o Postman para realizar os testes dos endpoints. Também utilizei JWT para autenticação, JPA para persistencia de dados, Junit e mockito para testes unitários.
 
 Inicialmente o administrador terá que registrar o usuário no endpoint /auth/register, informando o tipo de permissão que o usuário terá: "ADMIN" ou "USER". 
 
