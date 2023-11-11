@@ -8,7 +8,6 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
 import projeto.lojademusica.domain.entities.Product;
 import projeto.lojademusica.domain.repositories.ProductRepository;
 import projeto.lojademusica.domain.services.exceptions.ProductNotFoundException;
@@ -16,7 +15,7 @@ import projeto.lojademusica.domain.services.exceptions.ProductNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.PropertyPermission;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
