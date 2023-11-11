@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
@@ -96,5 +97,17 @@ class ProductServicesTest {
 
         verify(repository).save(produto);
         assertEquals(produto,produtoEsperado);
+    }
+
+    @DisplayName("Should delete product")
+    @Test
+    void delete() {
+        Long idParaExcluir = 1L;
+        Mockito.doNothing().when(repository).deleteById(idParaExcluir);
+
+        services.delete(idParaExcluir);
+
+        Mockito.verify(repository).deleteById(idParaExcluir);
+
     }
 }
